@@ -1,0 +1,73 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+
+  <div class="form-froup row" style="width: 60%;">
+
+    <label class="col-sm-2 col-form-label">Project Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="ProjectName"
+             placeholder="Enter Project Name">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Builder</label>
+    <div class="col-sm-10">
+      <select class="form-control" [(ngModel)]="Builder">
+        <option>--Select--</option>
+        <option *ngFor="let accName of BuilderList">
+          {{accName.AccountName}}
+        </option>
+      </select>
+    </div>
+
+    <label class="col-sm-2 col-form-label">Project Address</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="ProjectAddress"
+             placeholder="Enter Project Address">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Project Town</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="ProjectTown"
+             placeholder="Enter Project Town">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Council</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="Council"
+             placeholder="Enter Council Name">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Project State</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="ProjectState"
+             placeholder="Enter Project State">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Approximate Value</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" [(ngModel)]="ApproxValue"
+             placeholder="Enter Approx Value">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Start Date</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="StartDate"
+             placeholder="Enter Start Date">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Expected End Date</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="ExpectEnd"
+             placeholder="Enter Expected End Date">
+    </div>
+
+  </div>
+</div>
+
+
+<button (click)="addProject()" *ngIf="project.ProjectID==0" class="btn btn-primary">
+  Add
+</button>
+
+<button (click)="updateProject()" *ngIf="project.ProjectID!=0" class="btn btn-primary">
+  Update
+</button>
